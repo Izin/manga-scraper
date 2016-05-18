@@ -1,0 +1,77 @@
+</section>
+
+<!-- Footer -->
+<footer>
+  <div id="counter">
+    <span id="current">0</span> / <span id="total">0</span>
+  </div>
+</footer>
+
+  <!-- JS files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script>
+    'use strict';
+
+    $(function() {
+
+      // Functions
+      function showScan (id) {
+        $('.scan').hide();
+        $('#scan-' + id).show();
+      }
+      function showCounter (id, timeout) {
+        $('#counter #current').html(id);
+        $('#counter').stop().fadeIn(100);
+        window.setTimeout(hideCounter, timeout);
+      }
+      function hideCounter (timeout) {
+        $('#counter').stop().fadeOut(400);
+      }
+
+      // Variables
+      var scanId = 0;
+
+      // Actions
+      $('#counter #total').html(NB_PAGES);
+      showScan(scanId);
+      hideCounter(5000);
+
+
+      $('body').keydown(function(e) {
+        var KEY_LEFT   = 37;
+        var KEY_RIGHT  = 39;
+        var KEY_SPACE  = 32;
+
+        // Next scan
+        if (e.keyCode === KEY_RIGHT || e.keyCode === KEY_SPACE) {
+          if (scanId < NB_PAGES + 1) {
+            e.preventDefault();
+            scanId++;
+            showScan(scanId);
+            // We are NOT in the "The End" scan
+            if (scanId < NB_PAGES + 1) {
+              showCounter(scanId, 1000);
+            }
+            else {
+              hideCounter();
+            }
+          }
+        }
+
+        // Previous scan
+        else if (e.keyCode === KEY_LEFT) {
+          if (scanId > 0) {
+            e.preventDefault();
+            scanId--;
+            showScan(scanId);
+            showCounter(scanId, 1000);
+          }
+        }
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>

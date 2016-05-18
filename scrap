@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Exit on errors
+set -eu
+
+# App constantes
+MANGAFOX_URL="http://mangafox.me"
+APP_VERSION="0.9.1"
+APP_PATH=`pwd`
+
+# Chapiter's information
+MANGA_TITLE=""
+MANGA_VOLUME_NUMBER=""
+MANGA_CHAPTER_NUMBER=""
+MANGA_CHAPTER_SCANS=""
+MANGA_CHAPTER_URL=""
+MANGA_CHAPTER_PATH=""
+
+# Application's scripts
+source "${APP_PATH}/src/back.sh"
+source "${APP_PATH}/src/front.sh"
+
+# Runtime
+displayHeader
+checkApplicationPath
+displayUsageIfRequestedOrIfNoArguments "$@"
+checkPastedUrl "$@"
+setChapterData
+checkIfMangafoxIsUp
+checkIfTheChapterExist "$@"
+getChapterTotalScansNumber
+setupFoldersToStoreData
+buildChapterFile
+displayBuiltChapterPath
+displayFooter
+
+# Exit with success
+exit 0
