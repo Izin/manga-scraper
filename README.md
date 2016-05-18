@@ -1,8 +1,10 @@
 # Manga Scraper
-##### Such [reader](docs/0.8/screen-1.jpg), very [manga](docs/0.8/screen-2.jpg)!
 
 ## Why?
 > “I don't want to waste my time while scans are loading, just as I don't need to see adds aside to the content I came to read.“ - Malo Blanchard
+
+## How it works?
+![banner](docs/version/0.9/banner.png)
 
 ## Usage
 ```bash
@@ -14,7 +16,7 @@ cd manga-scraper
 bash scrap "{MANGAFOX_MANGA_CHAPITER_FIRST_PAGE_URL}"
 
 # example
-bash scrap "http://mangafox.me/manga/tower_of_god/v01/c7/12.html"
+bash scrap "http://mangafox.me/manga/tower_of_god/v02/c197/1.html"
 ```
 
 ## Philosophy

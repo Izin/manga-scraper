@@ -45,19 +45,19 @@ function displayFooter {
 #
 function displayUsage {
   displayTitle "How to use"
-  displayInfoLine " 1. Go to the first chapter's page of the manga you want to read"
+  displayInfoLine "  * Go to the first chapter's page of the manga you want to read"
   displayInfoLine "    (in Mangafox obviously)"
   echo ""
-  displayInfoLine " 2. Re-launch this app by passing the chapter's URL as argument, like this:"
+  displayInfoLine "  * Re-launch this app by passing the chapter's URL as argument, like this:"
   displayInfoLine "    ┌ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ┐"
   echo -e "    ${BLU}|${OFF} cd manga-scraper                                                      ${BLU}|${OFF}"
-  echo -e "    ${BLU}|${OFF} bash scrap \"http://mangafox.me/manga/tower_of_god/v01/c7/12.html\"     ${BLU}|${OFF}"
+  echo -e "    ${BLU}|${OFF} bash scrap \"http://mangafox.me/manga/tower_of_god/v02/c197/1.html\"    ${BLU}|${OFF}"
   displayInfoLine "    └ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ┘"
   echo ""
-  displayInfoLine " 3. When this script has finished working, copy/paste the displayed URL"
-  displayInfoLine "    in your favorite navigator"
+  displayInfoLine "  * When this script has finished working, copy/paste the displayed local "
+  displayInfoLine "    URL in your favorite navigator"
   echo ""
-  displayInfoLine " 4. Enjoy :) !"
+  displayInfoLine "  * Enjoy :) !"
 }
 
 ##
