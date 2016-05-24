@@ -115,6 +115,6 @@ function displayBuiltChapterPath {
   echo "│                              chapter is ready!                               │"
   echo "└──────────────────────────────────────────────────────────────────────────────┘"
   echo ""
-  echo -e " ${ORA}─>${OFF} ${GRE}$MANGA_CHAPTER_PATH${OFF}"
+  echo -e " ${ORA}─>${OFF} file://${GRE}$MANGA_CHAPTER_PATH${OFF}"
   echo ""
 }

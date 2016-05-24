@@ -8,15 +8,15 @@
 
 ## Usage
 ```bash
-# clone
 git clone https://github.com/Izin/manga-scraper.git
 cd manga-scraper
+bash scrap "{MANGAFOX_URL}"
 
-# use
-bash scrap "{MANGAFOX_MANGA_CHAPITER_FIRST_PAGE_URL}"
-
-# example
+# Example for a single chapter
 bash scrap "http://mangafox.me/manga/tower_of_god/v02/c197/1.html"
+
+# Example for an entiere volume
+bash scrap "http://mangafox.me/manga/tower_of_god/v02"
 ```
 
 ## Philosophy

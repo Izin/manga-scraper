@@ -24,14 +24,24 @@ source "${APP_PATH}/src/front.sh"
 displayHeader
 checkApplicationPath
 displayUsageIfRequestedOrIfNoArguments "$@"
-checkPastedUrl "$@"
-setChapterData
-checkIfMangafoxIsUp
-checkIfTheChapterExist "$@"
-getChapterTotalScansNumber
-setupFoldersToStoreData
-buildChapterFile
-displayBuiltChapterPath
+checkPastedUrl "$@"                           # step. 1
+if ((`userWantsAnEntiereVolume` == 1)); then
+  setChapterData                              # step. 2
+  checkIfMangafoxIsUp                         # step. 3
+  checkIfTheChapterExist "$@"                 # step. 4
+  getChapterTotalScansNumber
+  setupFoldersToStoreData
+  buildChapterFile                            # step. 5
+  displayBuiltChapterPath
+else
+  setMangaData                                # step. 2
+  checkIfMangafoxIsUp                         # step. 3
+  checkIfTheVolumeExist "$@"                  # step. 4
+  getTotalNumberOfChapiters
+  setupFoldersToStoreData
+  buildVolumeChapiters                        # step. 5
+  displayBuiltVolumePath
+fi
 displayFooter
 
 # Exit with success

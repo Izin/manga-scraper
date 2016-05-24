@@ -38,3 +38,5 @@ ftpsync.settings
 .vagrant/
 packer_cache/
 CVS
+dev/
+library/
