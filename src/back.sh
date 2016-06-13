@@ -46,8 +46,8 @@ function isValidMangafoxUrl {
 }
 
 ##
-# Display a warning if the user is trying to execute the script outside
-# it's user folder
+# Display a warning if the user is trying to execute the script from 
+# outside it's home folder
 #
 function checkApplicationPath {
   local USER_HOME=`whoami`
@@ -242,7 +242,7 @@ function checkPastedUrl {
   fi
 
   if ((`isWebsiteUp $1` == 0)); then
-    displayErrorLine " This URL does not refer to an existing manga or chapter"
+    displayErrorLine " This manga or this chapiter does not exist"
     displayUsage
     displayFooter
     exit 0
